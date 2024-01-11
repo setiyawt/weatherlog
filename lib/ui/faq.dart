@@ -54,7 +54,7 @@ class faq extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "What is the Home Security Application?",
+                        "What is the Weather Log Campus Application?",
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -65,7 +65,7 @@ class faq extends StatelessWidget {
                         height: 20,
                       ),
                       Text(
-                        "The Home Security Application is a comprehensive security solution designed to monitor and protect your home. It incorporates advanced features such as sensor detection and a 7-day historical data viewing capability.",
+                        "The Weather Log Campus Application is a mobile application designed to monitor and display real-time temperature and humidity data on campus. Additionally, it allows users to make notes or logs based on weather conditions, especially during rain or other significant weather events.",
                         style: TextStyle(
                           fontSize: 14,
                           color: Color(0xFF2D3259),
@@ -81,7 +81,7 @@ class faq extends StatelessWidget {
                   const EdgeInsets.only(top: 0, bottom: 0, left: 5, right: 5),
               child: Container(
                 width: 500,
-                height: 250,
+                height: 200,
                 decoration: BoxDecoration(
                   border: Border(
                       bottom: BorderSide(
@@ -96,7 +96,7 @@ class faq extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "How does the sensor detection feature work?",
+                        "How does the application detect rain or significant weather changes?",
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -107,7 +107,7 @@ class faq extends StatelessWidget {
                         height: 20,
                       ),
                       Text(
-                        " The sensor detection feature utilizes various sensors strategically placed around your home to identify any unusual activities or intrusions. When a sensor is triggered, the application sends real-time alerts to your device, allowing you to stay informed about potential security issues.",
+                        "The application uses real-time weather data to detect changes in weather conditions, including rain. It relies on reliable sources to provide accurate information for timely updates.",
                         style: TextStyle(
                           fontSize: 14,
                           color: Color(0xFF2D3259),
@@ -138,7 +138,7 @@ class faq extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "What types of sensors are supported by the application?",
+                        "Can I view historical temperature and humidity data for the campus?",
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -149,7 +149,7 @@ class faq extends StatelessWidget {
                         height: 20,
                       ),
                       Text(
-                        " The application supports a range of sensors, including motion sensors, door/window contact sensors, and other smart sensors compatible with the system. These sensors collectively contribute to creating a robust security network for your home.",
+                        "Yes, the application offers a feature to view historical data, allowing users to analyze temperature and humidity patterns over time.",
                         style: TextStyle(
                           fontSize: 14,
                           color: Color(0xFF2D3259),
@@ -180,7 +180,7 @@ class faq extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "How does the 7-day historical data viewing feature work?",
+                        "How does the note-taking feature work?",
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -191,7 +191,7 @@ class faq extends StatelessWidget {
                         height: 20,
                       ),
                       Text(
-                        " The application stores and organizes data collected by the sensors over the past 7 days. Users can access a visual representation of this data through intuitive graphs and charts, allowing them to review historical security events and patterns.",
+                        "The note-taking feature allows users to add personalized notes or memos related to specific weather conditions. This feature enhances preparedness and planning based on past weather experiences.",
                         style: TextStyle(
                           fontSize: 14,
                           color: Color(0xFF2D3259),

@@ -92,9 +92,11 @@ class _RegistrationState extends State<Registration> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign Up'),
+        title: Text('Sign Up',
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
         centerTitle: true,
         backgroundColor: Color(0xFF1C2321),
+        automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
         child: Container(

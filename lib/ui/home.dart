@@ -26,7 +26,6 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
-    // Panggil fungsi untuk mengambil data terbaru dari Firestore
     fetchData();
   }
 
@@ -98,7 +97,6 @@ class _HomeState extends State<Home> {
                               } else if (snapshot.hasError) {
                                 return Text('Error: ${snapshot.error}');
                               } else {
-                                // Display data here
                                 var document = snapshot.data;
 
                                 if (document != null) {

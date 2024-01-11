@@ -21,8 +21,7 @@ class MyDataUploader {
       FirebaseFirestore.instance.collection('data-sensor');
 
   void startUpload() {
-    // Start a timer to fetch and upload data every second
-    _timer = Timer.periodic(Duration(minutes: 10), (timer) {
+    _timer = Timer.periodic(Duration(minutes: 1), (timer) {
       uploadDataFromApi();
     });
   }
@@ -50,27 +49,23 @@ class MyDataUploader {
     try {
       final List<Map<String, dynamic>> jsonData = await fetchData();
 
-      // Extract relevant data (temperature and humidity) and store in Firebase
       for (var data in jsonData) {
-        // Convert temp_c and humidity to double if they are of type int
         final double temp_c = data['current']['temp_c'].toDouble();
         final double humidity = data['current']['humidity'].toDouble();
         final String localtimeString = data['location']['localtime'];
         final DateTime localtime = DateTime.parse(localtimeString);
         final String formattedLocaltime =
             DateFormat("yyyy-MM-dd HH:mm:ss").format(localtime);
-        // Create a new JSON object with only temperature and humidity
+
         final Map<String, dynamic> newData = {
           'temp_c': temp_c,
           'humidity': humidity,
           'localtime': formattedLocaltime,
         };
 
-        // Upload the new data to Firebase
         DatabaseReference newChildReference = _database.push();
         await newChildReference.set(newData);
 
-        // Automatically send the data to Firestore without specifying a path
         await _firestoreCollection.add(newData);
 
         print('Data uploaded to Realtime Database and Firestore.');
@@ -78,14 +73,12 @@ class MyDataUploader {
 
       print(
           'Temperature, humidity and localdatetime data uploaded to Firebase Realtime Database.');
-      //await transferDataFromRealtimeDatabaseToFirestore();
     } catch (e) {
       print('Error uploading data: $e');
     }
   }
 
   void dispose() {
-    // Cancel the timer when done
     _timer.cancel();
   }
 }

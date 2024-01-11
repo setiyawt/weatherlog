@@ -5,7 +5,6 @@ import 'package:security_system/ui/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 // import 'package:security_system/ui/signup.dart';
-import 'package:security_system/ui/verify_email.dart';
 
 final messengerKey = GlobalKey<ScaffoldMessengerState>();
 
@@ -40,26 +39,4 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
     );
   }
-}
-
-class MainPage extends StatelessWidget {
-  const MainPage({Key? key});
-
-  @override
-  Widget build(BuildContext context) => Scaffold(
-        body: StreamBuilder<User?>(
-          stream: FirebaseAuth.instance.authStateChanges(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(child: CircularProgressIndicator());
-            } else if (snapshot.hasError) {
-              return Center(child: Text('Something went wrong!!'));
-            } else if (snapshot.hasData) {
-              return VerifyEmail();
-            } else {
-              return Login();
-            }
-          },
-        ),
-      );
 }
